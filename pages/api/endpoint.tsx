@@ -16,7 +16,7 @@ const fields = [
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const client = asana.Client.create().useAccessToken(
-    '1/1200500395636877:571eb4d33157b09969d69da0196a5b37'
+    process.env.ASANA_API_KEY ?? ''
   )
   const me = await client.users.me()
 
